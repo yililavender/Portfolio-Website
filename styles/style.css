@@ -393,7 +393,7 @@ section > h1:first-child::before {
 
 #contact .contact-container form input,
 #contact .contact-container form textarea {
-  padding: 0.5em;
+  padding: 1em 0.5em;
   background-color: transparent;
   border: none;
   color: white;
