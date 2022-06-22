@@ -177,6 +177,7 @@ section > h1:first-child::before {
 
 #portfolio .projects .project-card .card-body {
   position: relative;
+  top: -4px;
   width: 100%;
   padding: 20px 25px;
   background-color: #101014;
@@ -567,6 +568,11 @@ footer p {
   text-decoration: line-through;
 }
 
+.action-btn a {
+  text-decoration: none;
+  color: white;
+}
+
 #preloader {
   background-color: #0e0e0e;
   position: fixed;
@@ -683,6 +689,7 @@ footer p {
     left: unset;
   }
   #home {
+    height: 100vh;
     padding: 10em 0;
     width: 80% !important;
   }

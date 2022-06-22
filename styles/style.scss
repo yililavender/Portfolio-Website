@@ -166,6 +166,7 @@ section > h1:first-child {
 
       .card-body {
         position: relative;
+        top: -4px;
         width: 100%;
         padding: 20px 25px;
         background-color: $e-background;
@@ -483,6 +484,11 @@ footer {
     box-shadow: 0px 0px 15px -3px rgba(56, 225, 255, 0.1);
     text-decoration: line-through;
   }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
 }
 
 //Preloader
@@ -588,6 +594,7 @@ footer {
   }
 
   #home {
+    height: 100vh;
     padding: 10em 0;
     width: 80% !important;
     p {
