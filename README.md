@@ -1,6 +1,6 @@
 <h1 align="center">Portfolio Website</h1>
 
-![Homepage](https://i.ibb.co/GTVMC3T/personal.png)
+![Homepage](https://i.imgur.com/sVMx7bH.png)
 
 
 ## Technologies
