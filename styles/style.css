@@ -98,6 +98,7 @@ section > h1:first-child::before {
 }
 
 #home {
+  height: 100vh !important;
   width: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -689,7 +690,7 @@ footer p {
     left: unset;
   }
   #home {
-    height: 100vh;
+    height: 100vh !important;
     padding: 10em 0;
     width: 80% !important;
   }
