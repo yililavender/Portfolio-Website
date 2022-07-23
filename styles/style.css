@@ -395,13 +395,13 @@ section > h1:first-child::before {
 
 #contact .contact-container form input,
 #contact .contact-container form textarea {
-  padding: 1em 0.5em;
+  padding: 0.75em 1em;
   background-color: transparent;
   border: none;
   color: white;
   font-family: "Montserrat", sans-serif;
   border-bottom: 2px solid #38bdff;
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
   -webkit-transition: 200ms;
   transition: 200ms;
   resize: none;
@@ -415,20 +415,17 @@ section > h1:first-child::before {
 
 #contact .contact-container form .success input,
 #contact .contact-container form .success textarea {
-  border: 2px solid #24ae36 !important;
+  border-bottom: 2px solid #24ae36 !important;
 }
 
 #contact .contact-container form .error {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-  padding-top: 5px;
   color: #ff4141 !important;
   margin-bottom: 10px;
 }
 
-#contact .contact-container form .error input, #contact .contact-container form .error textarea {
-  margin-bottom: 5px !important;
-  border: 2px solid #ff4141 !important;
+#contact .contact-container form .error input,
+#contact .contact-container form .error textarea {
+  border-bottom: 2px solid #ff4141 !important;
 }
 
 footer {
@@ -548,6 +545,10 @@ footer p {
           animation-delay: 2.5s;
 }
 
+.mb-1 {
+  margin-bottom: 10px;
+}
+
 .action-btn {
   padding: 0.6em 1.7em;
   border-radius: 0;
@@ -559,6 +560,8 @@ footer p {
   font-size: 0.8em;
   -webkit-transition: 200ms;
   transition: 200ms;
+  text-decoration: none;
+  color: white;
 }
 
 .action-btn:hover {
@@ -567,11 +570,6 @@ footer p {
   -webkit-box-shadow: 0px 0px 15px -3px rgba(56, 225, 255, 0.1);
           box-shadow: 0px 0px 15px -3px rgba(56, 225, 255, 0.1);
   text-decoration: line-through;
-}
-
-.action-btn a {
-  text-decoration: none;
-  color: white;
 }
 
 #preloader {
@@ -737,7 +735,8 @@ footer p {
   #about .about-container .award-title {
     font-size: 0.95em !important;
   }
-  #about .about-container p, #about .about-container li {
+  #about .about-container p,
+  #about .about-container li {
     font-size: 0.8em;
   }
   #contact .contact-container {

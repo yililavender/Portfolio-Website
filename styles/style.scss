@@ -330,13 +330,13 @@ section > h1:first-child {
 
       input,
       textarea {
-        padding: 1em 0.5em;
+        padding: 0.75em 1em;
         background-color: transparent;
         border: none;
         color: white;
         font-family: "Montserrat", sans-serif;
         border-bottom: 2px solid $primary;
-        margin-bottom: 2em;
+        margin-bottom: 1.2em;
         transition: 200ms;
         resize: none;
 
@@ -349,20 +349,17 @@ section > h1:first-child {
       .success {
         input,
         textarea {
-          border: 2px solid #24ae36 !important;
+          border-bottom: 2px solid #24ae36 !important;
         }
       }
-  
-  
+
       .error {
-        transition: 200ms;
-        padding-top: 5px;
         color: #ff4141 !important;
         margin-bottom: 10px;
 
-        input, textarea{
-          margin-bottom: 5px !important;
-          border: 2px solid #ff4141 !important;
+        input,
+        textarea {
+          border-bottom: 2px solid #ff4141 !important;
         }
       }
     }
@@ -469,6 +466,9 @@ footer {
 }
 
 //Classes
+.mb-1{
+  margin-bottom: 10px;
+}
 .action-btn {
   padding: 0.6em 1.7em;
   border-radius: 0;
@@ -478,17 +478,14 @@ footer {
   color: white;
   font-size: 0.8em;
   transition: 200ms;
+  text-decoration: none;
+  color: white;
 
   &:hover {
     border-color: rgba($color: $primary, $alpha: 0.5);
     background-color: rgba($color: $primary, $alpha: 0.1);
     box-shadow: 0px 0px 15px -3px rgba(56, 225, 255, 0.1);
     text-decoration: line-through;
-  }
-
-  a{
-    text-decoration: none;
-    color: white;
   }
 }
 
@@ -617,26 +614,25 @@ footer {
         width: 90vw;
         height: fit-content;
         margin: 55px 0;
-   
 
-        .card-body{
+        .card-body {
           padding: 15px;
-          h2{
+          h2 {
             font-size: 1.2em;
           }
 
-          p{
+          p {
             font-size: 0.9em;
           }
 
-          .project-techs{
-            li{
+          .project-techs {
+            li {
               font-size: 0.8em;
             }
           }
 
           .project-links {
-            a{
+            a {
               font-size: 1.2em;
             }
           }
@@ -645,40 +641,41 @@ footer {
     }
   }
 
-  #about{
-    .about-container{
+  #about {
+    .about-container {
       width: 90vw;
 
-      div{
+      div {
         margin-bottom: 1.1em;
       }
 
-      h3{
+      h3 {
         font-size: 1.1em;
       }
 
-      .award-title{
+      .award-title {
         font-size: 0.95em !important;
       }
 
-      p, li{
+      p,
+      li {
         font-size: 0.8em;
       }
     }
   }
 
-  #contact{
-    .contact-container{
+  #contact {
+    .contact-container {
       width: 90vw;
       margin: 2em 0;
 
-      .contact-info{
+      .contact-info {
         text-align: center;
         width: 100%;
         padding: 0;
         margin-bottom: 50px;
 
-        div{
+        div {
           margin: 2em 0;
         }
       }
