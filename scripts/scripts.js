@@ -30,6 +30,11 @@ Tu.tScroll({
 
 const form = document.getElementById("contact_form");
 
+const el = document.getElementById('g-recaptcha-response');
+if (el) {
+    el.setAttribute('required', 'required');
+}
+
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -80,7 +85,7 @@ const isValidEmail = email => {
     return re.test(String(email).toLowerCase());
 }
 
-function validateFields(){
+function validateFields() {
     let isValid = true;
     let nameVal = full_name.value.trim();
     let emailVal = email.value.trim();
@@ -100,7 +105,7 @@ function validateFields(){
     if (emailVal === '') {
         setError(email, 'Email is required');
         isValid = false;
-    } else if (emailVal.length > 80 ) {
+    } else if (emailVal.length > 80) {
         setError(email, 'Email can only be 80 characters long.');
         isValid = false;
     } else if (!isValidEmail(emailVal)) {
@@ -120,7 +125,7 @@ function validateFields(){
         setSuccess(subject);
     }
 
-    
+
     if (messageVal === '') {
         setError(message, 'Message is required.');
         isValid = false;
@@ -135,7 +140,7 @@ function validateFields(){
 }
 
 
-function setError(element, message){
+function setError(element, message) {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
 
@@ -144,7 +149,7 @@ function setError(element, message){
     inputControl.classList.remove('success');
 }
 
-function setSuccess(element){
+function setSuccess(element) {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
 
@@ -158,15 +163,13 @@ function showSuccessMessageAndRedirect(message, redirect) {
         title: "Good job!",
         text: message,
         icon: "success",
-    }).then(() => {
-            window.location.replace(redirect);
     })
 }
 
-function showErrorMessage(message){
+function showErrorMessage(message) {
     swal({
         title: "Something went wrong...",
         text: message,
         icon: "error",
-      });
+    });
 }
