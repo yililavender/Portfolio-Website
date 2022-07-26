@@ -30,46 +30,51 @@ Tu.tScroll({
 
 const form = document.getElementById("contact_form");
 
-const el = document.getElementById('g-recaptcha-response');
-if (el) {
-    el.setAttribute('required', 'required');
-}
-
+const grecaptcha = document.getElementById('g-recaptcha-response');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
 
+    let response = grecaptcha.getResponse();
 
-    if (validateFields()) {
-        axios({
-            url: 'https://formspree.io/f/xayvvowz',
-            method: 'post',
-            headers: {
-                'Accept': 'application/json'
-            },
-            data: {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                subject: document.getElementById('subject').value.trim(),
-                message: document.getElementById('message').value.trim()
-            }
-        }).then(data => {
-            swal({
-                title: "Good job!",
-                text: "Message succesfully sent.",
-                icon: "success",
-            })
-
-            console.log(data)
-        })
-            .catch((error) => {
+    if (response.length == 0) {
+        swal({
+            title: "Please verify that you are human",
+            text: error,
+            icon: "error",
+        });
+    } else {
+        if (validateFields()) {
+            axios({
+                url: 'https://formspree.io/f/xayvvowz',
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                data: {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    subject: document.getElementById('subject').value.trim(),
+                    message: document.getElementById('message').value.trim()
+                }
+            }).then(data => {
                 swal({
-                    title: "Something went wrong...",
-                    text: error,
-                    icon: "error",
+                    title: "Good job!",
+                    text: "Message succesfully sent.",
+                    icon: "success",
+                })
+
+                console.log(data)
+            })
+                .catch((error) => {
+                    swal({
+                        title: "Something went wrong...",
+                        text: error,
+                        icon: "error",
+                    });
+                    console.log(error);
                 });
-                console.log(error);
-            });
+        }
     }
 })
 
