@@ -30,7 +30,24 @@ Tu.tScroll({
 
 const form = document.getElementById("contact_form");
 
-const grecaptcha = document.getElementById('g-recaptcha-response');
+if(typeof grecaptcha === 'undefined') {
+    grecaptcha = {};
+  }
+  grecaptcha.ready = function(cb){
+    if(typeof grecaptcha === 'undefined') {
+      // window.__grecaptcha_cfg is a global variable that stores reCAPTCHA's
+      // configuration. By default, any functions listed in its 'fns' property
+      // are automatically executed when reCAPTCHA loads.
+      const c = '___grecaptcha_cfg';
+      window[c] = window[c] || {};
+      (window[c]['fns'] = window[c]['fns']||[]).push(cb);
+    } else {
+      cb();
+    }
+  }
+
+
+
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -39,8 +56,8 @@ form.addEventListener('submit', e => {
 
     if (response.length == 0) {
         swal({
-            title: "Please verify that you are human",
-            text: error,
+            title: "Error",
+            text: "Please verify that you are human",
             icon: "error",
         });
     } else {
