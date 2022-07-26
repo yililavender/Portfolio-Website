@@ -10,4 +10,5 @@
   <li>Javascript</li>
   <li>T-scroll (for scroll effects)</li>
   <li>Axios</li>
+  <li>reCAPTCHA v2</li>
 </ul>
