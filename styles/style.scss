@@ -283,7 +283,7 @@ section > h1:first-child {
   flex-direction: column;
 
   .contact-container {
-    width: 50%;
+    width: 60%;
     margin: 5em auto;
     padding: 5em 0;
     display: flex;
@@ -466,7 +466,7 @@ footer {
 }
 
 //Classes
-.mb-1{
+.mb-1 {
   margin-bottom: 10px;
 }
 .action-btn {
@@ -567,7 +567,31 @@ footer {
 }
 
 //Responsive
+@media screen and 
+(min-device-width: 800px) and 
+(max-device-width: 1700px) and 
+(-webkit-min-device-pixel-ratio: 1) {
+  #home{
+    width: 50%;
+  }
+  
+  #contact{
+    .contact-container{
+      width: 100%;
+      padding: 1em 0;
+      margin: 3em 0;
+    }
+  }
 
+
+  #about{
+    .about-container{
+      width: 70%;
+    }
+  }
+
+
+}
 //Mobile
 @media only screen and (max-width: 768px) {
   section {
@@ -644,6 +668,7 @@ footer {
   #about {
     .about-container {
       width: 90vw;
+      margin: 50px auto;
 
       div {
         margin-bottom: 1.1em;
@@ -666,7 +691,7 @@ footer {
 
   #contact {
     .contact-container {
-      width: 90vw;
+      width: 86% !important;
       margin: 2em 0;
 
       .contact-info {
@@ -679,6 +704,10 @@ footer {
           margin: 2em 0;
         }
       }
+    }
+
+    form{
+      width: 100%;
     }
   }
 }
