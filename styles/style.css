@@ -256,7 +256,7 @@ section > h1:first-child::before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 60%;
   font-size: 1.2em;
 }
 
