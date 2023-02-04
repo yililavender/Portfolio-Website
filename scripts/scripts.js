@@ -7,6 +7,29 @@ window.addEventListener("load", () => {
     }, 100);
 });
 
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("#nav-links li");
+
+window.onscroll = () => {
+    var current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+
+        if (scrollY >= sectionTop - 150) {
+            current = section.getAttribute("id");
+            console.log(current);
+        }
+    });
+
+    navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.classList.contains(current + "-li")) {
+            li.classList.add("active");
+        }
+    });
+};
+
 Tu.tScroll({
     't-element': '.fadeUp',
     't-duration': 1

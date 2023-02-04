@@ -325,6 +325,7 @@ section > h1:first-child {
 
   .about-container {
     margin: 100px auto;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
 
@@ -335,9 +336,9 @@ section > h1:first-child {
       font-weight: 300;
     }
 
-    .skill-brackets{
+    .skill-brackets {
       font-style: italic;
-      color: #515372;
+      color: #455a81;
     }
 
     div {
@@ -386,23 +387,28 @@ section > h1:first-child {
 #contact {
   @include flexCenter();
   flex-direction: column;
+  height: 90vh !important;
+  padding-bottom: 2em;
 
   .contact-container {
     width: 60%;
-    margin: 5em auto;
-    padding: 5em 0;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-direction: column;
 
     div {
-      margin-bottom: 2em;
       text-align: center;
+    }
+
+    a,p {
+      color: white;
+      font-size: 18px;
     }
 
     i,
     h3 {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
 }
@@ -507,6 +513,12 @@ footer {
 }
 
 //Classes
+.active {
+  i {
+    color: $primary;
+  }
+}
+
 .mb-1 {
   margin-bottom: 10px;
 }
@@ -656,6 +668,11 @@ footer {
   nav {
     #nav-links {
       width: 100%;
+      a {
+        i {
+          font-size: 1.3em;
+        }
+      }
     }
   }
 
@@ -674,6 +691,7 @@ footer {
 
     p:nth-child(3) {
       font-size: 0.7em;
+      width: 100%;
     }
 
     h1 {
@@ -690,6 +708,24 @@ footer {
           img {
             height: 60px;
             border: 2px solid #38bdff;
+          }
+        }
+
+        .work-details {
+          .work-header {
+            .title {
+              font-size: 22px;
+            }
+
+            a,
+            p {
+              font-size: 18px;
+            }
+          }
+
+          .date,
+          .location {
+            font-size: 16px;
           }
         }
       }
@@ -753,9 +789,5 @@ footer {
     }
   }
 
-  #contact{
-    .contact-container{
-      padding: 2em 0;
-    }
-  }
+ 
 }

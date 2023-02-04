@@ -375,6 +375,7 @@ section > h1:first-child::before {
 
 #about .about-container {
   margin: 100px auto;
+  margin-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,7 +393,7 @@ section > h1:first-child::before {
 
 #about .about-container .skill-brackets {
   font-style: italic;
-  color: #515372;
+  color: #455a81;
 }
 
 #about .about-container div {
@@ -456,30 +457,37 @@ section > h1:first-child::before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 90vh !important;
+  padding-bottom: 2em;
 }
 
 #contact .contact-container {
   width: 60%;
-  margin: 5em auto;
-  padding: 5em 0;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #contact .contact-container div {
-  margin-bottom: 2em;
   text-align: center;
+}
+
+#contact .contact-container a, #contact .contact-container p {
+  color: white;
+  font-size: 18px;
 }
 
 #contact .contact-container i,
 #contact .contact-container h3 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 footer {
@@ -597,6 +605,10 @@ footer p {
 #passing-lines .line:nth-child(3)::after {
   -webkit-animation-delay: 2.5s;
           animation-delay: 2.5s;
+}
+
+.active i {
+  color: #38bdff;
 }
 
 .mb-1 {
@@ -764,6 +776,9 @@ footer p {
   nav #nav-links {
     width: 100%;
   }
+  nav #nav-links a i {
+    font-size: 1.3em;
+  }
   #social-links {
     right: 30px;
     left: unset;
@@ -778,6 +793,7 @@ footer p {
   }
   #home p:nth-child(3) {
     font-size: 0.7em;
+    width: 100%;
   }
   #home h1 {
     font-size: 2.4em;
@@ -788,6 +804,17 @@ footer p {
   #experience .work-container .work-card .company-image img {
     height: 60px;
     border: 2px solid #38bdff;
+  }
+  #experience .work-container .work-card .work-details .work-header .title {
+    font-size: 22px;
+  }
+  #experience .work-container .work-card .work-details .work-header a,
+  #experience .work-container .work-card .work-details .work-header p {
+    font-size: 18px;
+  }
+  #experience .work-container .work-card .work-details .date,
+  #experience .work-container .work-card .work-details .location {
+    font-size: 16px;
   }
   #portfolio .projects .project-card {
     width: 90vw;
@@ -827,9 +854,6 @@ footer p {
   #about .about-container p,
   #about .about-container li {
     font-size: 0.8em;
-  }
-  #contact .contact-container {
-    padding: 2em 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
