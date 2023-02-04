@@ -138,13 +138,109 @@ section > h1:first-child {
   }
 }
 
+//Experience Section
+#experience {
+  @include flexCenter();
+  flex-direction: column;
+  margin-bottom: 0 !important;
+  padding: 0em !important;
+
+  .work-container {
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .work-card {
+      display: flex;
+      margin-bottom: 3em;
+
+      .company-image {
+        img {
+          box-shadow: rgba($primary, 1) 0 1px, rgba($secondary, 1) 0 6px;
+          border: 2px solid $primary;
+          height: 75px;
+          transition: 100ms;
+
+          &:hover {
+            filter: grayscale(1);
+          }
+        }
+      }
+
+      .work-details {
+        margin-left: 1em;
+
+        .work-header {
+          display: flex;
+          align-items: baseline;
+          flex-wrap: wrap;
+
+          .title {
+            font-size: 26px;
+            margin-right: 5px;
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 19px;
+            margin-right: 5px;
+          }
+
+          a {
+            font-weight: 400;
+            font-size: 19px;
+            color: $primary;
+            transition: 200ms;
+            text-decoration: none;
+            &:hover {
+              margin-left: 5px;
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .date,
+        .location {
+          color: #ababab;
+        }
+
+        .desc {
+          margin-top: 0.8em;
+          padding-left: 1em;
+          width: 100%;
+
+          a {
+            color: white;
+          }
+        }
+
+        .work-sills {
+          margin-top: 0.8em;
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            padding: 5px 12px;
+            border-radius: 20px;
+            background-color: rgba($primary, 0.2);
+            font-size: 0.95em;
+            margin-right: 0.8em;
+            margin-bottom: 0.7em;
+          }
+        }
+      }
+    }
+  }
+}
+
 //Portfolio Section
 #portfolio {
   @include flexCenter();
   flex-direction: column;
 
   .projects {
-    padding: 5em 0;
+    padding: 1em 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -153,7 +249,7 @@ section > h1:first-child {
       position: relative;
       width: 632px;
       height: 350px;
-      margin: 150px 50px;
+      margin: 170px 50px;
 
       img {
         height: 100%;
@@ -239,6 +335,11 @@ section > h1:first-child {
       font-weight: 300;
     }
 
+    .skill-brackets{
+      font-style: italic;
+      color: #515372;
+    }
+
     div {
       padding: 10px 15px;
       margin-bottom: 2.5em;
@@ -267,6 +368,10 @@ section > h1:first-child {
     li {
       margin: 0.5em 0;
       font-weight: 300;
+
+      span {
+        font-weight: 500;
+      }
     }
 
     .other-about {
@@ -288,80 +393,16 @@ section > h1:first-child {
     padding: 5em 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
-    .contact-info {
-      padding: 1em 3em;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-
-      h2 {
-        font-size: 2em;
-      }
-
-      h3,
-      i {
-        font: 1.5em;
-        margin-right: 0.2em;
-      }
-
-      p {
-        font-weight: 200;
-        font-size: 1.2em;
-      }
+    div {
+      margin-bottom: 2em;
+      text-align: center;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      div {
-        display: flex;
-        flex-direction: column;
-      }
-
-      label {
-        font-size: 1.2em;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      input,
-      textarea {
-        padding: 0.75em 1em;
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-family: "Montserrat", sans-serif;
-        border-bottom: 2px solid $primary;
-        margin-bottom: 1.2em;
-        transition: 200ms;
-        resize: none;
-
-        &:focus {
-          outline: none;
-          border-radius: 5px;
-        }
-      }
-
-      .success {
-        input,
-        textarea {
-          border-bottom: 2px solid #24ae36 !important;
-        }
-      }
-
-      .error {
-        color: #ff4141 !important;
-        margin-bottom: 10px;
-
-        input,
-        textarea {
-          border-bottom: 2px solid #ff4141 !important;
-        }
-      }
+    i,
+    h3 {
+      font-size: 20px;
     }
   }
 }
@@ -567,30 +608,38 @@ footer {
 }
 
 //Responsive
-@media screen and 
-(min-device-width: 800px) and 
-(max-device-width: 1700px) and 
-(-webkit-min-device-pixel-ratio: 1) {
-  #home{
+@media screen and (min-device-width: 800px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+  #home {
     width: 50%;
   }
-  
-  #contact{
-    .contact-container{
-      width: 100%;
-      padding: 1em 0;
-      margin: 3em 0;
+
+  #experience {
+    .work-container {
+      width: 80%;
     }
   }
 
-
-  #about{
-    .about-container{
+  #about {
+    .about-container {
       width: 70%;
     }
   }
+}
 
+@media screen and (min-device-width: 1530px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+  #portfolio {
+    width: 96%;
+  }
+}
 
+@media screen and (min-device-width: 1700px) and (max-device-width: 1900px) and (-webkit-min-device-pixel-ratio: 1) {
+  #portfolio {
+    width: 96%;
+
+    .projects {
+      padding: 2em 0;
+    }
+  }
 }
 //Mobile
 @media only screen and (max-width: 768px) {
@@ -629,6 +678,21 @@ footer {
 
     h1 {
       font-size: 2.4em;
+    }
+  }
+
+  #experience {
+    .work-container {
+      width: 96%;
+
+      .work-card {
+        .company-image {
+          img {
+            height: 60px;
+            border: 2px solid #38bdff;
+          }
+        }
+      }
     }
   }
 
@@ -689,25 +753,9 @@ footer {
     }
   }
 
-  #contact {
-    .contact-container {
-      width: 86% !important;
-      margin: 2em 0;
-
-      .contact-info {
-        text-align: center;
-        width: 100%;
-        padding: 0;
-        margin-bottom: 50px;
-
-        div {
-          margin: 2em 0;
-        }
-      }
-    }
-
-    form{
-      width: 100%;
+  #contact{
+    .contact-container{
+      padding: 2em 0;
     }
   }
 }
