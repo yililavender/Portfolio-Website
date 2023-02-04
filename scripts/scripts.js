@@ -18,7 +18,6 @@ window.onscroll = () => {
 
         if (scrollY >= sectionTop - 150) {
             current = section.getAttribute("id");
-            console.log(current);
         }
     });
 
